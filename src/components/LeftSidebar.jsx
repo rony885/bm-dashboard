@@ -38,9 +38,13 @@ const LeftSidebar = () => {
       "/customers": "sales-ul",
       "/customer-payments": "sales-ul",
       "/customer-ledger": "sales-ul",
-      "/sales-return-list": "sales-ul",
-      "/new-sale-return": "sales-ul",
-      "/sale-return-update": "sales-ul",
+      // "/sales-return-list": "sales-ul",
+      // "/new-sale-return": "sales-ul",
+      // "/sale-return-update": "sales-ul",
+      // sales-return
+      "/sales-return-list": "sales-return",
+      "/new-sale-return": "sales-return",
+      "/sale-return-update": "sales-return",
       // purchase-ul
       "/purchases-list": "purchase-ul",
       "/new-purchase": "purchase-ul",
@@ -426,6 +430,60 @@ const LeftSidebar = () => {
                     Current Stock
                   </Link>
                 </li>
+
+                <li
+                  className={
+                    activeSubMenu === "low-stock" ? "menuitem-active" : ""
+                  }
+                >
+                  <Link
+                    className={activeSubMenu === "low-stock" ? "active" : ""}
+                    to="/low-stock"
+                  >
+                    Low Stock
+                  </Link>
+                </li>
+
+                <li
+                  className={
+                    activeSubMenu === "all-stock" ? "menuitem-active" : ""
+                  }
+                >
+                  <Link
+                    className={activeSubMenu === "all-stock" ? "active" : ""}
+                    to="/all-stock"
+                  >
+                    All Stock
+                  </Link>
+                </li>
+
+                <li
+                  className={
+                    activeSubMenu === "transfer-stock" ? "menuitem-active" : ""
+                  }
+                >
+                  <Link
+                    className={
+                      activeSubMenu === "transfer-stock" ? "active" : ""
+                    }
+                    to="/transfer-stock"
+                  >
+                    Transfer Stock
+                  </Link>
+                </li>
+
+                <li
+                  className={
+                    activeSubMenu === "price-list" ? "menuitem-active" : ""
+                  }
+                >
+                  <Link
+                    className={activeSubMenu === "price-list" ? "active" : ""}
+                    to="/price-list"
+                  >
+                    Price List
+                  </Link>
+                </li>
               </ul>
             </div>
           </li>
@@ -463,6 +521,7 @@ const LeftSidebar = () => {
                     Sales List
                   </Link>
                 </li>
+
                 <li
                   className={
                     activeSubMenu === "new-sale" ? "menuitem-active" : ""
@@ -475,32 +534,6 @@ const LeftSidebar = () => {
                     New Sale
                   </Link>
                 </li>
-
-                {/* <li
-                  className={
-                    activeSubMenu === "sale-update" ? "menuitem-active" : ""
-                  }
-                >
-                  <Link
-                    className={activeSubMenu === "sale-update" ? "active" : ""}
-                    to="/sale-update"
-                  >
-                    Sale Update
-                  </Link>
-                </li>
-
-                <li
-                  className={
-                    activeSubMenu === "sale-view" ? "menuitem-active" : ""
-                  }
-                >
-                  <Link
-                    className={activeSubMenu === "sale-view" ? "active" : ""}
-                    to="/sale-view"
-                  >
-                    Sale View
-                  </Link>
-                </li> */}
 
                 <li
                   className={
@@ -531,23 +564,62 @@ const LeftSidebar = () => {
                     Customers
                   </Link>
                 </li>
+              </ul>
+            </div>
+          </li>
 
-                {/* <li
+          <li
+            className={`side-nav-item ${
+              activeMenu === "sales-return" ? "menuitem-active" : ""
+            }`}
+          >
+            <Link
+              to="#"
+              className="side-nav-link"
+              onClick={() => handleSubMenuToggle("sales-return")}
+            >
+              <i className="uil-store"></i>
+              <span> Sales Return </span>
+              <span className="menu-arrow"></span>
+            </Link>
+            <div
+              className={`collapse ${
+                activeMenu === "sales-return" ? "show" : ""
+              }`}
+              id="sidebarEcommerce"
+            >
+              <ul className="side-nav-second-level">
+                <li
                   className={
-                    activeSubMenu === "customer-payments"
+                    activeSubMenu === "sales-return-list"
                       ? "menuitem-active"
                       : ""
                   }
                 >
                   <Link
                     className={
-                      activeSubMenu === "customer-payments" ? "active" : ""
+                      activeSubMenu === "sales-return-list" ? "active" : ""
                     }
-                    to="/customer-payments"
+                    to="/sales-return-list"
                   >
-                    Customer Payments
+                    Sales Return List
                   </Link>
-                </li> */}
+                </li>
+
+                <li
+                  className={
+                    activeSubMenu === "new-sale-return" ? "menuitem-active" : ""
+                  }
+                >
+                  <Link
+                    className={
+                      activeSubMenu === "new-sale-return" ? "active" : ""
+                    }
+                    to="/new-sale-return"
+                  >
+                    New Sale Retrun
+                  </Link>
+                </li>
               </ul>
             </div>
           </li>

@@ -266,7 +266,7 @@ const LeftSidebar = () => {
 
       <div className="h-100" id="leftside-menu-container" data-simplebar>
         <ul className="side-nav">
-          <li className="side-nav-title side-nav-item">Navigation</li>
+          <li className="side-nav-title side-nav-item">General</li>
 
           <li
             className={`side-nav-item ${
@@ -618,6 +618,90 @@ const LeftSidebar = () => {
                     to="/new-sale-return"
                   >
                     New Sale Retrun
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li className="side-nav-title side-nav-item">Purchase</li>
+
+          <li
+            className={`side-nav-item ${
+              activeMenu === "purchase-ul" ? "menuitem-active" : ""
+            }`}
+          >
+            <Link
+              to="#"
+              className="side-nav-link"
+              onClick={() => handleSubMenuToggle("purchase-ul")}
+            >
+              <i className="uil-store"></i>
+              <span> Purchase </span>
+              <span className="menu-arrow"></span>
+            </Link>
+            <div
+              className={`collapse ${
+                activeMenu === "purchase-ul" ? "show" : ""
+              }`}
+              id="sidebarEcommerce"
+            >
+              <ul className="side-nav-second-level">
+                <li
+                  className={
+                    activeSubMenu === "purchases-list" ? "menuitem-active" : ""
+                  }
+                >
+                  <Link
+                    className={
+                      activeSubMenu === "purchases-list" ? "active" : ""
+                    }
+                    to="/purchases-list"
+                  >
+                    Purchases-list
+                  </Link>
+                </li>
+
+                <li
+                  className={
+                    activeSubMenu === "new-purchase" ? "menuitem-active" : ""
+                  }
+                >
+                  <Link
+                    className={activeSubMenu === "new-purchase" ? "active" : ""}
+                    to="/new-purchase"
+                  >
+                    New Purchase
+                  </Link>
+                </li>
+
+                <li
+                  className={
+                    activeSubMenu === "purchases-payments"
+                      ? "menuitem-active"
+                      : ""
+                  }
+                >
+                  <Link
+                    className={
+                      activeSubMenu === "purchases-payments" ? "active" : ""
+                    }
+                    to="/purchases-payments"
+                  >
+                    Purchases Payments
+                  </Link>
+                </li>
+
+                <li
+                  className={
+                    activeSubMenu === "suppliers" ? "menuitem-active" : ""
+                  }
+                >
+                  <Link
+                    className={activeSubMenu === "suppliers" ? "active" : ""}
+                    to="/suppliers"
+                  >
+                    Suppliers
                   </Link>
                 </li>
               </ul>
